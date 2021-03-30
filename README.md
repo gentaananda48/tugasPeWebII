@@ -1,5 +1,8 @@
 # CRUD
-![Home](home.png)
-![Tambah Produk](tambahProduk.png)
-![List Produk](listProduk.png)
-![Edit Produk](edit.png)
+![Home](home.PNG)
+
+![Tambah Produk](tambahProduk.PNG)
+
+![List Produk](listProduk.PNG)
+
+![Edit Produk](edit.PNG)
