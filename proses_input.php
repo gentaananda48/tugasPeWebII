@@ -1,20 +1,27 @@
 <?php include("config.php");
 
 if(isset($_POST['tambah'])){
-    $nama_produk = $_POST['nama_produk'];
-    $keterangan = $_POST['keterangan'];
-    $harga = $_POST['harga'];
-    $jumlah = $_POST['jumlah'];
+    try{
+            $nama = $_POST['nama'];
+            $nim = $_POST['nim'];
+            $jenis_kelamin = $_POST['jenis_kelamin'];
+            $kelas = $_POST['kelas'];
+            $program_studi = $_POST['program_studi'];
+            $angkatan = $_POST['angkatan'];
 
-$sql = "INSERT INTO produk (nama_produk, keterangan, harga, jumlah) VALUE ('$nama_produk', '$keterangan', '$harga', '$jumlah')";
-$query = mysqli_query($db, $sql);
+        $sql = "INSERT INTO mahasiswa (nama, nim, jenis_kelamin, kelas, program_studi, angkatan) 
+        VALUE ('$nama', '$nim', '$jenis_kelamin', '$kelas', '$program_studi', '$angkatan')";
+        $query = mysqli_query($db, $sql);
 
-    if( $query ){
-        header('Location: list_produk.php?status=sukses');
-    }
-    else{
-        header('Location: list_produk.php?status=gagal');
-    }
+            if( $query ){
+                header('Location: index.php?status=sukses');
+            }
+            else{
+                header('Location: index.php?status=gagal');
+            }
+        }catch(Exception $e){
+            echo $e;
+        }
 }
 
 else{
